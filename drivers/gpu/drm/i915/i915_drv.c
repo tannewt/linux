@@ -103,6 +103,10 @@ MODULE_PARM_DESC(enable_hangcheck,
 		"WARNING: Disabling this can cause system wide hangs. "
 		"(default: true)");
 
+unsigned int i915_lvds_channels = 0;
+module_param_named(lvds_channels, i915_lvds_channels, int, 0600);
+MODULE_PARM_DESC(lvds_channels, "LVDS channels in use: 0=(default) probe hardware 1=single 2=dual");
+
 static struct drm_driver driver;
 extern int intel_agp_enabled;
 
